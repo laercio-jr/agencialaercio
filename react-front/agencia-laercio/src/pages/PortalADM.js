@@ -6,7 +6,6 @@ import Input from '../components/Input';
 
 function PortalADM () {
     const[viagens,setViagens]=React.useState([]);
-    const[id,setId] = useState('');
 
     React.useEffect(()=>{
         fetch("http://localhost:8081/viagem/getAll").then(res=>res.json())
@@ -16,11 +15,27 @@ function PortalADM () {
         )
     },[])
 
+    function deletar(id){     
+        
+        const viagemRow={id}  
+        console.log(JSON.stringify(viagemRow))
+        fetch("localhost:8081/viagem/delete",{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify(viagemRow)
+      }).catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ' + error.message);
+      });
+
+    }
+
+    
     const deleteClick=(e)=>{
+        var id = e.id;
         e.preventDefault()
-        const viagemRow={viageid}
+        const viagemRow={id}
         console.log(viagemRow);
-        fetch("http://localhost:8081/viagem/add",{
+        fetch("http://localhost:8081/viagem/delete",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(viagemRow)
@@ -32,6 +47,7 @@ function PortalADM () {
       window.location.reload()
 
     }
+    
     return(
         <section className="container">
             <h1 class="text-white">Controle de Viagens (Restrito)</h1>
@@ -58,9 +74,7 @@ function PortalADM () {
                                     <td>{viagem.destino}</td>
                                     <td>{viagem.temGuia ? "Sim":"Não"}</td>
                                     <td>
-                                        <form>
-                                            <button onClick={deleteClick} className="btn btn-danger" type="submit">Deletar</button>
-                                        </form>
+                                    <button onClick={()=> deletar(viagem.id)} className="btn btn-danger">Deletar</button>
                                     </td>
                                 </tr> 
                                 )

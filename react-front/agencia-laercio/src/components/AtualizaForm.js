@@ -26,7 +26,7 @@ function AtualizaForm () {
         e.preventDefault()
         const viagemRow={id, viajante, destino, temGuia}
         console.log(viagemRow)
-        fetch("http://localhost:8081/viagem/add",{
+        fetch("http://localhost:8081/viagem/delete",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(viagemRow)
