@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Header () {
     return(
         <header>
             <nav className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
                 <div className="container">
-                    <a className="navbar-brand" href="http://localhost:3000/Home">
+                    <a className="navbar-brand" to="/">
                         <img className="tamanho-imagem" src="../img/logo.png"/>
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"

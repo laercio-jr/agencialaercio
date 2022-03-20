@@ -1,4 +1,5 @@
 import React from 'react';
+import CompraForm from '../components/CompraForm';
 
 function Destinos () {
     return(
@@ -68,36 +69,8 @@ function Destinos () {
                         </div>
                     </div>
         
-                    <hr />
-                    <h2>Comprar passagem</h2>
-                    <form >
-                        <div className="form-group">
-                            <label >Nome do viajante</label>
-                            <input type="text" className="form-control" id="" placeholder="Digite seu nome"/>
-                        </div>
-        
-                        <div className="form-group">
-                            <label>Destinos</label>
-                            <select className="custom-select">
-                                <option selected>Escolha um destino...</option>
-                                <option>Cristo Redentor</option>
-                                <option>Disneyland</option>
-                                <option>Torre Eiffel</option>
-                                <option>Farol da Barra</option>
-                                <option>Fernando de Noronha</option>
-                            </select>
-                        </div>
-        
-        
-                        <div className="form-check">
-                            <input type="checkbox" id="checkn1" className="form-check-input"/>
-                            <label className="form-check-label" for="checkn1">Guia Turistico (+ R$ 499,00)</label>
-                        </div>
-        
-                        <br />
-        
-                        <button type="submit" className="btn btn-success">Confirmar viagem</button>
-                    </form>
+                    <hr />                    
+                    <CompraForm/>
                     <br />
                     <hr />
                 </div>
