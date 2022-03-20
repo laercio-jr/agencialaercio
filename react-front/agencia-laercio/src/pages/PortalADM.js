@@ -73,9 +73,12 @@ function PortalADM () {
                             <form>
                                 <div className="form-group ">
                                     <label for="">ID da viagem</label>
-                                    <select className="custom-select" asp-for="Id">
-                                        <option selected>-- Selecione um código</option>                                            
-                                            <option>@viagem.Id</option>
+                                    <select className="custom-select">                                        
+                                        <option value="none" selected disabled hidden>Selecione um código</option>  
+                                        {viagens.map((viagem)=>(                                          
+                                            <option>{viagem.id}</option>
+                                        ))
+                                        }
                                     </select>
                                 </div>
 
@@ -87,7 +90,7 @@ function PortalADM () {
                                 <div className="form-group">
                                     <label for="">Destinos</label>
                                     <select className="custom-select">
-                                        <option selected>Escolha um destino...</option>
+                                        <option value="none" selected disabled hidden>Escolha um destino...</option>
                                         <option>Cristo Redentor</option>
                                         <option>Disneyland</option>
                                         <option>Torre Eiffel</option>

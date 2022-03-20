@@ -17,7 +17,7 @@ public class ViagemController {
     @PostMapping("/add")
     public String add(@RequestBody Viagem viagem){
         viagemService.saveViagem(viagem);
-        return "New viagem is added";
+        return "Nova viagem adicionada!";
     }
 
     @DeleteMapping("/delete")
