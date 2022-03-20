@@ -7,4 +7,5 @@ O MySQL foi utilizado como banco, assim, criando um app fullstack.
 O **`modelo físico`** (script para criação do banco) está no diretório principal com a extensão ".sql"... 
 
 Como não vi a necessidade de criar outras tabelas para este exemplo, a DER (**`modelo lógico`**) do banco ficou simples até de mais:
+
 <img src="DER.png" alt="drawing" width="70%"/>
