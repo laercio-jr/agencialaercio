@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import Input from "./Input";
 
 function CompraForm () {
+
+    const atual = window.location.href;
     const[viajante,setNome] = useState('');
     const[destino, setDestino] = useState('');
     const[temGuia, setGuia] = useState('');
@@ -13,7 +15,7 @@ function CompraForm () {
     const handleClick=(e)=>{
         e.preventDefault()
         const viagemRow={viajante, destino, temGuia}
-        console.log(viagemRow)
+        console.log(viagemRow);
         fetch("http://localhost:8081/viagem/add",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
@@ -21,7 +23,10 @@ function CompraForm () {
     
       }).then(()=>{
         console.log("Nova viagem adicionada!")
-      })
+      });
+
+      window.location.reload()
+
     }
 
     return(
@@ -52,7 +57,7 @@ function CompraForm () {
 
                     <br/>
 
-                    <button onClick={handleClick} type="submit" className="btn btn-success">Confirmar viagem</button>
+                    <button onClick={handleClick} className="btn btn-success">Confirmar viagem</button>
                 </form>
             </div>
     );
